@@ -5,39 +5,23 @@ function Home() {
     <div>
 
       {/* HERO */}
-      <section style={{
-        background: 'linear-gradient(135deg, #2C1A3E 0%, #7B2D8B 50%, #9B59B6 100%)',
-        minHeight: '90vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        textAlign: 'center',
-        padding: '2rem',
-      }}>
+      <section className="min-h-screen bg-gradient-to-br from-purple-950 via-purple-800 to-purple-500 flex items-center justify-center text-center px-6">
         <div>
-          <p style={{ color: '#E8D5A3', letterSpacing: '0.2em', fontSize: '0.85rem', marginBottom: '1rem', textTransform: 'uppercase' }}>
+          <p className="text-yellow-200 tracking-widest text-xs uppercase mb-4">
             ✦ Nail Art Profesional · Buenos Aires
           </p>
-          <h1 style={{ color: 'white', fontSize: 'clamp(2.5rem, 6vw, 5rem)', fontFamily: 'Georgia, serif', fontWeight: 300, lineHeight: 1.1, marginBottom: '1.5rem' }}>
-            El arte que lleva<br />
-            <em style={{ color: '#F48FB1' }}>tus manos</em>
+          <h1 className="text-white text-5xl md:text-7xl font-serif font-light leading-tight mb-6">
+            El arte que lleva <br />
+            <em className="text-pink-300">tus manos</em>
           </h1>
-          <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.1rem', maxWidth: '500px', margin: '0 auto 2.5rem', lineHeight: 1.7 }}>
+          <p className="text-white/70 text-lg max-w-md mx-auto mb-10 leading-relaxed">
             Manicuría, nail art y cursos profesionales en el corazón de Buenos Aires.
           </p>
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link to="/reservar" className="btn-primary">
+          <div className="flex gap-4 justify-center flex-wrap">
+            <Link to="/reservar" className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg hover:-translate-y-0.5 transition-all">
               📅 Reservar turno
             </Link>
-            <Link to="/cursos" style={{
-              border: '1px solid rgba(232,213,163,0.5)',
-              color: '#E8D5A3',
-              padding: '0.8rem 2rem',
-              borderRadius: '50px',
-              textDecoration: 'none',
-              fontWeight: 500,
-              transition: 'all 0.3s'
-            }}>
+            <Link to="/cursos" className="border border-yellow-200/50 text-yellow-200 px-8 py-3 rounded-full font-medium hover:bg-yellow-200/10 transition-all">
               🎓 Ver cursos
             </Link>
           </div>
@@ -45,60 +29,52 @@ function Home() {
       </section>
 
       {/* STATS */}
-      <section style={{
-        background: '#2C1A3E',
-        padding: '3rem 2rem',
-        display: 'grid',
-        gridTemplateColumns: 'repeat(3, 1fr)',
-        gap: '2rem',
-        textAlign: 'center'
-      }}>
+      <section className="bg-purple-950 py-12 px-6 grid grid-cols-3 gap-6 text-center">
         {[
           { num: '6+', label: 'Años de experiencia' },
           { num: '8+', label: 'Cursos disponibles' },
           { num: '100%', label: 'Incluye materiales' },
         ].map((stat, i) => (
           <div key={i}>
-            <div style={{ fontSize: '2.5rem', fontFamily: 'Georgia, serif', color: '#E8D5A3', fontWeight: 600 }}>{stat.num}</div>
-            <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em', marginTop: '0.5rem' }}>{stat.label}</div>
+            <div className="text-4xl font-serif text-yellow-200 font-semibold">{stat.num}</div>
+            <div className="text-white/50 text-xs uppercase tracking-widest mt-2">{stat.label}</div>
           </div>
         ))}
       </section>
 
       {/* SOBRE MI */}
-      <section style={{ padding: '5rem 2rem', maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
-        <span style={{ color: '#E91E8C', fontSize: '0.75rem', letterSpacing: '0.2em', textTransform: 'uppercase', fontWeight: 600 }}>Instructora profesional</span>
-        <h2 style={{ fontFamily: 'Georgia, serif', fontSize: '2.5rem', fontWeight: 300, color: '#2C1A3E', margin: '1rem 0' }}>
-          Hola, soy <em style={{ color: '#9B59B6' }}>Gabriela</em>
+      <section className="py-20 px-6 max-w-2xl mx-auto text-center">
+        <span className="text-pink-500 text-xs tracking-widest uppercase font-semibold">
+          Instructora profesional
+        </span>
+        <h2 className="text-4xl font-serif font-light text-purple-900 mt-3 mb-6">
+          Hola, soy <em className="text-purple-600">Gabriela</em>
         </h2>
-        <p style={{ color: '#666', lineHeight: 1.8, fontSize: '1rem' }}>
-          Soy Gabriela Mendoza, profesional manicurista con más de 6 años de experiencia en el mundo de las uñas.
-          Me especializo en Nail Art y en técnicas avanzadas como manicura combinada, esculpidas en gel, polygel y acrílico.
-          Me caracteriza la dedicación, el detalle y el compromiso con cada clienta y alumna.
+        <p className="text-gray-500 leading-relaxed text-base">
+          Soy Gabriela Mendoza, profesional manicurista con más de 6 años de experiencia.
+          Me especializo en Nail Art y técnicas avanzadas como manicura combinada,
+          esculpidas en gel, polygel y acrílico. Me caracteriza la dedicación,
+          el detalle y el compromiso con cada clienta y alumna.
         </p>
-        <Link to="/cursos" className="btn-primary" style={{ marginTop: '2rem', display: 'inline-block' }}>
+        <Link to="/cursos" className="inline-block mt-8 bg-gradient-to-r from-purple-600 to-pink-500 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg hover:-translate-y-0.5 transition-all">
           Ver mis cursos →
         </Link>
       </section>
 
       {/* CONTACTO */}
-      <section style={{ background: '#f8f4ff', padding: '4rem 2rem', textAlign: 'center' }}>
-        <h2 style={{ fontFamily: 'Georgia, serif', fontSize: '2rem', fontWeight: 300, color: '#2C1A3E', marginBottom: '2rem' }}>
+      <section className="bg-purple-50 py-16 px-6 text-center">
+        <h2 className="text-3xl font-serif font-light text-purple-900 mb-8">
           ¿Hablamos?
         </h2>
-        <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <a href="https://wa.me/message/TSYLVDCRN6EEA1" target="_blank" className="btn-primary">
+        <div className="flex gap-4 justify-center flex-wrap">
+          <a href="https://wa.me/message/TSYLVDCRN6EEA1" target="_blank" className="bg-gradient-to-r from-purple-600 to-pink-500 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all">
             💬 WhatsApp
           </a>
-          <a href="https://www.instagram.com/caelaspa" target="_blank" style={{
-            border: '2px solid #9B59B6', color: '#9B59B6',
-            padding: '0.8rem 2rem', borderRadius: '50px',
-            textDecoration: 'none', fontWeight: 600, transition: 'all 0.3s'
-          }}>
+          <a href="https://www.instagram.com/caelaspa" target="_blank" className="border-2 border-purple-600 text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-purple-50 transition-all">
             📸 Instagram
           </a>
         </div>
-        <p style={{ color: '#888', marginTop: '1.5rem', fontSize: '0.9rem' }}>
+        <p className="text-gray-400 mt-6 text-sm">
           📍 Av. Santa Fe 934, al lado del café Martínez
         </p>
       </section>
