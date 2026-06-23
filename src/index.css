@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+:root {
+  --lila: #9B59B6;
+  --lila-dark: #7B2D8B;
+  --rosa: #E91E8C;
+  --dorado: #E8D5A3;
+  --negro: #2C1A3E;
+}
