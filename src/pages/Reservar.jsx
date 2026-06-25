@@ -26,9 +26,19 @@ function Reservar() {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  function handleSubmit(e) {
-    e.preventDefault()
-    const texto = `Hola! Quiero reservar un turno.
+async function handleSubmit(e) {
+  e.preventDefault()
+  
+  try {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/citas`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(form)
+    })
+
+    if(res.ok) {
+      // También abrir WhatsApp
+      const texto = `Hola! Quiero reservar un turno.
 Nombre: ${form.nombre}
 Teléfono: ${form.telefono}
 Servicio: ${form.servicio}
@@ -36,9 +46,13 @@ Fecha preferida: ${form.fecha}
 Hora preferida: ${form.hora}
 ${form.mensaje ? 'Mensaje: ' + form.mensaje : ''}`
 
-    window.open(`https://wa.me/message/TSYLVDCRN6EEA1?text=${encodeURIComponent(texto)}`, '_blank')
-    setEnviado(true)
+      window.open(`https://wa.me/message/TSYLVDCRN6EEA1?text=${encodeURIComponent(texto)}`, '_blank')
+      setEnviado(true)
+    }
+  } catch(error) {
+    console.error('Error:', error)
   }
+}
 
   return (
     <div className="min-h-screen bg-gray-50">
